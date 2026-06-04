@@ -1,0 +1,46 @@
+
+> unity-sports-academy@0.1.0 lint
+> eslint
+
+
+C:\Users\M\Dropbox\PC\Desktop\UNITY SPORTS ACADEMY\unity-sports-academy\src\app\admin\leagues\page.tsx
+  109:19  error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  191:55  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  191:71  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+C:\Users\M\Dropbox\PC\Desktop\UNITY SPORTS ACADEMY\unity-sports-academy\src\app\admin\page.tsx
+  17:48  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\M\Dropbox\PC\Desktop\UNITY SPORTS ACADEMY\unity-sports-academy\src\app\admin\players\page.tsx
+  226:50  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  226:70  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+C:\Users\M\Dropbox\PC\Desktop\UNITY SPORTS ACADEMY\unity-sports-academy\src\app\programs\page.tsx
+  141:31  warning  'index' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\M\Dropbox\PC\Desktop\UNITY SPORTS ACADEMY\unity-sports-academy\src\components\ProgramsSection.tsx
+  14:9  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\M\Dropbox\PC\Desktop\UNITY SPORTS ACADEMY\unity-sports-academy\src\components\ThemeToggle.tsx
+  14:5  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+C:\Users\M\Dropbox\PC\Desktop\UNITY SPORTS ACADEMY\unity-sports-academy\src\components\ThemeToggle.tsx:14:5
+  12 |   // Avoid hydration mismatch
+  13 |   React.useEffect(() => {
+> 14 |     setMounted(true);
+     |     ^^^^^^^^^^ Avoid calling setState() directly within an effect
+  15 |   }, []);
+  16 |
+  17 |   if (!mounted) {  react-hooks/set-state-in-effect
+
+C:\Users\M\Dropbox\PC\Desktop\UNITY SPORTS ACADEMY\unity-sports-academy\src\components\ui\liquid-glass-card.tsx
+  3:25  warning  'useState' is defined but never used  @typescript-eslint/no-unused-vars
+
+✖ 10 problems (8 errors, 2 warnings)
+

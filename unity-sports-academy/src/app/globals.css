@@ -1,0 +1,160 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+  --font-heading: var(--font-heading);
+  
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-sm: calc(var(--radius) * 0.6);
+
+  /* Custom Unity Colors */
+  --color-unity-green-deep: #0D2B1E;
+  --color-unity-green-emerald: #0F5132;
+  --color-unity-black: #0A0A0A;
+  --color-unity-graphite: #1A1A1A;
+  --color-unity-white: #F7F7F5;
+  --color-unity-red: #E63946;
+  --color-unity-gold: #C8A96B;
+}
+
+:root {
+  --background: #F7F7F5;
+  --foreground: #0D2B1E;
+  
+  --card: #FFFFFF;
+  --card-foreground: #0D2B1E;
+  
+  --popover: #FFFFFF;
+  --popover-foreground: #0D2B1E;
+  
+  --primary: #0D2B1E;
+  --primary-foreground: #F7F7F5;
+  
+  --secondary: #E63946;
+  --secondary-foreground: #FFFFFF;
+  
+  --muted: #F1F1F0;
+  --muted-foreground: #666666;
+  
+  --accent: #C8A96B;
+  --accent-foreground: #0D2B1E;
+  
+  --destructive: #E63946;
+  --destructive-foreground: #F7F7F5;
+  
+  --border: #E5E5E0;
+  --input: #E5E5E0;
+  --ring: #0D2B1E;
+  
+  --radius: 1rem;
+  
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-heading: "Plus Jakarta Sans", system-ui, sans-serif;
+
+  --glass-bg: rgba(255, 255, 255, 0.6);
+  --glass-border: rgba(205, 205, 200, 0.4);
+  --glass-shine: rgba(255, 255, 255, 0.3);
+}
+
+.dark {
+  --background: #0A0A0A;
+  --foreground: #F7F7F5;
+  
+  --card: #141414;
+  --card-foreground: #F7F7F5;
+  
+  --popover: #141414;
+  --popover-foreground: #F7F7F5;
+  
+  --primary: #0F5132;
+  --primary-foreground: #F7F7F5;
+  
+  --secondary: #E63946;
+  --secondary-foreground: #FFFFFF;
+  
+  --muted: #1A1A1A;
+  --muted-foreground: #A1A1AA;
+  
+  --accent: #C8A96B;
+  --accent-foreground: #0A0A0A;
+  
+  --destructive: #E63946;
+  --destructive-foreground: #F7F7F5;
+  
+  --border: #262626;
+  --input: #262626;
+  --ring: #0F5132;
+
+  --glass-bg: rgba(20, 20, 20, 0.4);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-shine: rgba(255, 255, 255, 0.05);
+}
+
+@layer base {
+  * {
+    @apply border-border transition-colors duration-300;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading tracking-tight;
+  }
+}
+
+@layer utilities {
+  .glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.08);
+  }
+  
+  .glass-dark {
+    @apply bg-black/20 backdrop-blur-lg border border-white/10 shadow-2xl;
+  }
+  
+  .liquid-glass {
+    @apply relative overflow-hidden;
+  }
+  
+  .liquid-glass::before {
+    content: "";
+    @apply absolute inset-0 opacity-50;
+    background: linear-gradient(135deg, var(--glass-shine), transparent, var(--glass-shine));
+  }
+  
+  .text-glow {
+    text-shadow: 0 0 20px rgba(200, 169, 107, 0.3);
+  }
+  
+  .section-padding {
+    @apply py-20 px-6 md:px-12 lg:px-24;
+  }
+}
